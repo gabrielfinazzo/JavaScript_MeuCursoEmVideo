@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        div#area {
+            background-color: green;
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()" --> 
+    <div id="area" >
+        Interaja...
+    </div>
+
+    <script>
+        var área = document.getElementById('area') // Não é a melhor forma de se utilizar a variável nas funções por conta da memória
+        área.addEventListener('click', clicar)
+        área.addEventListener('mouseenter', entrar)
+        área.addEventListener('mouseout', sair)
+
+        function clicar() {
+            área.innerText = 'Clicou!'
+            área.style.backgroundColor ='blue'
+            área.style.color = 'white'
+        }
+        function entrar() {
+            área.innerText = 'Entrou!'
+            área.style.backgroundColor = 'red'
+        }
+        function sair() {
+            área.innerText = 'Saiu!'
+            área.style.backgroundColor = 'yellow'
+            área.style.color = 'black'
+        }
+    </script>
+</body>
+</html>
