@@ -39,3 +39,4 @@ function verificar() {
         res.appendChild(img)
     }
 }
+
