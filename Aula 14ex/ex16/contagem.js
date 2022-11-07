@@ -13,8 +13,12 @@ function contagem() {
         alert('[Erro] Algo deu errado! Preencha o campo de forma correta!')
         res.innerHTML = 'Impossível contar!'
     } else if (step.value.length == 0 || stp <= 0) {
-        alert('[Erro] O valor do PASSO ficou vazio ou igual a 0! Altere para um valor apartir de 1.')
-        res.innerHTML = 'Impossível contar!'
+        alert('O PASSO não foi preenchido, será considerado um.')
+        while (st <= ed) {
+            res.innerHTML += ` ${st} &#128073`
+            stp = 1 
+            st = st + stp
+        }
     } else {
         while (st <= ed) {
             res.innerHTML += ` ${st} &#128073` 
