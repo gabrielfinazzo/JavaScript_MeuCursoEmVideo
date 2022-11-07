@@ -1,14 +1,26 @@
 function tabuada() {
-    var num = document.getElementById('num')
-    var n1 = Number(num.value)
-    var n2 = 1
-
-    if (num.value.length == '') {
-        alert('[ERRO] Digite um número para execução da tabuada')
+    let num = document.getElementById('num')
+    let tab = document.getElementById('select')
+    if (num.value.length == 0) {
+        alert('Por favor, digite um número!')
     } else {
-        while (n2 <= 10) { 
-            console.log(`${n1} x ${n2} = ${n1*n2}`)
-            n2++
+        let n = Number(num.value)
+        let c = 1
+        tab.innerHTML = ''
+        while (c <= 10) {
+
+            //criação das opções que estaram dentro do select
+            let item = document.createElement('option')
+            item.text = `${n} x ${c} = ${n*c}`
+
+            // Essa configuração do item.value serve somente para a utilização do php
+            item.value = `tab${c}`
+
+            //Aplicação dos valores dentro do select
+            tab.appendChild(item)
+            
+            c++
         }
     }
 }
+
